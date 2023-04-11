@@ -4,11 +4,14 @@
 #include <cstdio>
 
 thread_local std::vector<float> vs;
+
 constexpr const int N = 1000000000;
+
 static void DoSetup(const benchmark::State &state) {
   vs.resize(N, 0);
   for (int i = 0; i < N; i++) {
     vs[i] = -(float)(i);
+    vs[i] = vs[i] < 0 ? -vs[i] : vs[i];
   }
 }
 

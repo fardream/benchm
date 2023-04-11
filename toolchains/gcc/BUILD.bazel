@@ -109,11 +109,12 @@ cc_toolchain_config(
     ],
     opt_compile_flags = [
         "-g0",
-        "-O2",
+        "-O3",
         "-D_FORTIFY_SOURCE=1",
         "-DNDEBUG",
         "-ffunction-sections",
         "-fdata-sections",
+        "-ffast-math",
     ],
     opt_link_flags = ["-Wl,--gc-sections"],
     supports_start_end_lib = True,
